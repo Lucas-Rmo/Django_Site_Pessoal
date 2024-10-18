@@ -1,14 +1,17 @@
 {% extends "base.html" %}
-
+{% block title %}{{contato.nome}}{% endblock title %}
 {% block content %}
+<center>
 <h1>Detalhes do Contato</h1>
 
-<p><strong>Nome:</strong> {{ contato.nome }}</p>
-<p><strong>Email:</strong> {{ contato.email }}</p>
-<p><strong>Telefone:</strong> {{ contato.telefone }}</p>
+<p class='detalhes-contato'><strong>Nome:</strong> {{ contato.nome }}</p>
+<p class='detalhes-contato'><strong>Email:</strong> {{ contato.email }}</p>
+<p class='detalhes-contato'><strong>Telefone:</strong> {{ contato.telefone }}</p>
+<p class='detalhes-contato'><strong>Descrição:</strong><br><br> {{ contato.descricao }}</p>
+<br><br><br>
+<a class="btn-editar-detalhe" href="{% url 'contato_update' contato.pk %}">Editar</a>
+<a class="btn-excluir-detalhe"href="{% url 'contato_delete' contato.pk %}">Deletar</a>
+<a class="btn-voltar" href="{% url 'contato_list' %}">Voltar para a lista</a>
 
-<a href="{% url 'contato_update' contato.pk %}">Editar</a>
-<a href="{% url 'contato_delete' contato.pk %}">Deletar</a>
-<a href="{% url 'contato_list' %}">Voltar para a lista</a>
-
+</center>
 {% endblock content %}

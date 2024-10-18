@@ -1,14 +1,16 @@
 {% extends "base.html" %}
-
+{% block title %} {{lembrete.titulo}} {% endblock title %}
 {% block content %}
+<center>
 <h1>Detalhes do Lembrete</h1>
 
-<p><strong>Titulo:</strong> {{ lembrete.titulo }}</p>
-<p><strong>Descrição:</strong> {{ lembrete.descricao }}</p>
-<p><strong>Data de criação:</strong> {{ lembrete.data }}</p>
+<p class='detalhes-contato'><strong>Titulo:</strong> {{ lembrete.titulo }}</p>
+<p class='detalhes-contato'><strong>Data de criação:</strong> {{ lembrete.data }}</p>
+<p class='detalhes-contato'><strong>Descrição:</strong><br> {{ lembrete.descricao }}</p>
 
-<a href="{% url 'lembrete_update' lembrete.pk %}">Editar</a>
-<a href="{% url 'lembrete_delete' lembrete.pk %}">Deletar</a>
-<a href="{% url 'lembrete_list' %}">Voltar para a lista</a>
-
+<br><br>
+<a class="btn-editar-detalhe" href="{% url 'lembrete_update' lembrete.pk %}">Editar</a>
+<a class="btn-excluir-detalhe" href="{% url 'lembrete_delete' lembrete.pk %}">Deletar</a>
+<a class="btn-voltar" href="{% url 'lembrete_list' %}">Voltar para a lista</a>
+</center>
 {% endblock content %}

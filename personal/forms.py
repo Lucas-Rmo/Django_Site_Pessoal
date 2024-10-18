@@ -17,7 +17,7 @@ class ContatoForm(forms.ModelForm):
             "nome": forms.TextInput(attrs={"placeholder":"Nome"}),
             "telefone": forms.TextInput(attrs={"placeholder":"Telefone"}),
             "email": forms.TextInput(attrs={"placeholder":"E-mail"}),
-            "descricao": forms.TextInput(attrs={"placeholder":"Descrição"}),
+            "descricao": forms.Textarea(attrs={"placeholder":"Descrição"}),
         }
 
     
@@ -34,6 +34,6 @@ class LembreteForm(forms.ModelForm):
         }
 
         widgets = {
-            "titulo": forms.TextInput(attrs={"placeholder":"Titulo."}),
-            "descricao": forms.TextInput(attrs={"placeholder":"Descrição"}),
+            "titulo": forms.TextInput(attrs={"placeholder":"Titulo"}),
+            "descricao": forms.Textarea(attrs={"placeholder":"Descrição"}),
         }

@@ -1,21 +1,25 @@
 {% extends "base.html" %}
-
+{% block title %}Lembretes{% endblock title %}
 {% block content %}
+<center>
 <h1>Lista de Lembretes</h1>
 
-<a href="{% url 'lembrete_create' %}">Adicionar Novo Lembrete</a>
+<a class="add-btn" href="{% url 'lembrete_create' %}">Adicionar Novo Lembrete</a>
 
-<ul>
+<div class="lembretes-container">
     {% for lembrete in lembretes %}
-    <li>
-        <a href="{% url 'lembrete_detail' lembrete.pk %}">{{ lembrete.titulo }}
-        </a> - 
-        <a href="{% url 'lembrete_detail' lembrete.pk %}">{{ lembrete.descricao|slice:"0:10" }}
-        </a> - 
-        {{ lembrete.email }} 
-        <a href="{% url 'lembrete_update' lembrete.pk %}">[Editar]</a>
-        <a href="{% url 'lembrete_delete' lembrete.pk %}">[Deletar]</a>
-    </li>
+    <div class="lembrete-card">
+        <div class="lembrete-actions">
+            <a class="btn-editar" href="{% url 'lembrete_update' lembrete.pk %}">Editar</a>
+            <a class="btn-excluir" href="{% url 'lembrete_delete' lembrete.pk %}">Deletar</a><br>
+            <span>Criado em: {{lembrete.data}} </span>
+        </div>
+        <a class="lembrete-titulo" href="{% url 'lembrete_detail' lembrete.pk %}">{{ lembrete.titulo }}</a> <br>
+        <span>{{ lembrete.descricao }}</span>  
+        <span>{{ lembrete.email }}</span>
+
+    </div>
     {% endfor %}
-</ul>
+</div>
+</center>
 {% endblock content %}

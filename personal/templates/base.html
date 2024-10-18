@@ -1,15 +1,25 @@
+{% load static %}
+
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>
         {% block title %}Personal Website{% endblock title %}
     </title>
 </head>
 <body>
-{% block content %}
-aaaaaaa
+    <div class="topnav menu-bar"> <!-- Adicionando a classe "menu-bar" -->
+        <ul class="ul-menu">
+            <li class="li-menu"><a href="{% url "home" %}">Home</a></li>
+            <li class="li-menu"><a href="{% url "contato_list" %}">Agenda</a></li>
+            <li class="li-menu"><a href="{% url "lembrete_list" %}">Lembretes</a></li>
+            <li class="li-menu"><a href="#">link4</a></li>
+        </ul>
+    </div>
 
-{% endblock content %}
-
+    <div content>
+    {% block content %}
+    {% endblock content %}
+    </div>
 </body>
-
-<html>
+</html>

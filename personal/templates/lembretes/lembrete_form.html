@@ -1,14 +1,24 @@
 {% extends "base.html" %}
-
+{% block title %}
+{% if lembrete.pk %}Editar Lembrete{% else %}Novo Lembrete{% endif %}
+{% endblock title %}
 {% block content %}
+<center>
 <h1>{% if lembrete.pk %}Editar Lembrete{% else %}Novo Lembrete{% endif %}</h1>
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">{% if lembrete.pk %}Salvar Alterações{% else %}Criar Lembrete{% endif %}</button>
+    <div class="form-group">
+        <label for="id_nome">Titulo:</label><br>
+        {{ form.titulo }} <br>
+    </div>
+    <div class="form-group">
+        <label for="id_nome">Descrição:</label><br>
+        {{ form.descricao }} <br>
+    </div><br>
+    <button class="btn btn-primary" type="submit">{% if lembrete.pk %}Salvar Alterações{% else %}Criar Lembrete{% endif %}</button>
 </form>
 
-<a href="{% url 'lembrete_list' %}">Voltar para a lista</a>
-
+<a class="btn-voltar" href="{% url 'lembrete_list' %}">Voltar para a lista</a>
+</center>
 {% endblock content %}

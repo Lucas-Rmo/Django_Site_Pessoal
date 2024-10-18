@@ -1,0 +1,276 @@
+/* Estilos gerais */
+body {
+    padding-top: 60px;
+    background: #1F2833; /* Fundo cinza-escuro azulado */
+    color: #C5C6C7; /* Texto cinza claro suave */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Barra de Menu */
+.menu-bar .ul-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #2C3E50; /* Azul escuro/cinza */
+    overflow: hidden;
+}
+
+.menu-bar a {
+    float: left;
+    color: #ECF0F1; /* Texto cinza claro */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-bar a:hover {
+    background-color: #45A29E; /* Verde-azulado no hover */
+    color: #C5C6C7; /* Texto claro no hover */
+}
+
+.menu-bar a.active {
+    background-color: #66FCF1; /* Ciano suave no link ativo */
+    color: #0B0C10; /* Texto quase preto no link ativo */
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1F2833; /* Fundo das células em cinza-escuro */
+    color: #C5C6C7; /* Texto claro */
+}
+
+th {
+    padding: 12px;
+    background-color: #0B0C10; /* Preto muito escuro para os títulos */
+    color: #ffffff; /* Ciano suave para destaque nos títulos */
+    text-align: left;
+    border-bottom: 2px solid #45A29E; /* Borda inferior verde-azulada */
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #4B5D67; /* Borda inferior das células */
+    background-color: #1F2833; /* Fundo das células */
+    color: #C5C6C7; /* Texto claro */
+}
+
+
+
+/* Botões */
+.add-btn {
+    background-color: #45A29E; /* Verde-azulado suave */
+    color: #0B0C10; /* Preto muito escuro */
+    font-size: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.add-btn:hover {
+    background-color: #66FCF1; /* Ciano suave no hover */
+    color: #0B0C10; /* Preto muito escuro no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+}
+
+/* Estilo para alinhamento de botões */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-editar{
+    color:#45A29E;
+    text-decoration: none;
+
+}
+
+.btn-editar:hover{
+    transition:0.5s;
+    color:#368581;
+}
+
+.btn-excluir{
+    text-decoration: none;
+    color:rgb(139, 58, 58);
+}
+
+.btn-excluir:hover{
+    transition:0.5s;
+    color:rgb(109, 45, 45);
+
+}
+
+
+.contact-name{
+    color:white;
+}
+
+.contact-name:hover{
+    transition:0.5s;
+    color:#45A29E;
+    
+}
+
+.btn-editar-detalhe{
+    background:#45A29E;
+    color:white;
+    border-radius: 5px;
+    font-size:25px;
+    text-decoration: none;
+    padding: 5px 10px;
+
+}
+
+.btn-editar-detalhe:hover{
+    transition:0.5s;
+    background:#368581;
+    border-radius: 5px;
+    font-size:25px;
+    text-decoration: none;
+}
+
+.btn-excluir-detalhe{
+    text-decoration: none;
+    background:rgb(139, 58, 58);
+    color:white;
+    border-radius: 5px;
+    font-size:25px;
+    text-decoration: none;
+    padding: 5px 10px;
+    
+}
+
+.btn-excluir-detalhe:hover{
+    transition:0.5s;
+    background:rgb(109, 45, 45);
+    color:white;
+    border-radius: 5px;
+ 
+    font-size:25px;
+    text-decoration: none;
+
+}
+
+.btn-voltar{
+    color:white;
+    background:rgb(104, 96, 96);
+    color:white;
+    border-radius: 5px;
+    font-size:25px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.btn-voltar:hover{
+    transition:0.5s;
+    background:rgb(80, 74, 74);
+}
+
+.detalhes-contato{
+    font-size:20px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:25px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-confirmar{
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:25px;
+}
+
+.btn-confirmar:hover{
+    background-color: #0056b3;
+}
+
+.btn-cancelar{
+    background-color: rgb(139, 58, 58);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:25px;
+    text-decoration: none;
+}
+
+.btn-cancelar:hover{
+    background:rgb(109, 45, 45);
+}
+
+.lembretes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 cartões por linha com tamanho mínimo */
+    gap: 20px; /* Espaçamento entre os cartões */
+}
+
+.lembrete-card {
+    background-color: #000000; /* Cor de fundo do cartão */
+    border: 1px solid #ccc; /* Borda do cartão */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra do cartão */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    color:white;
+}
+
+.descricao {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona reticências */
+    margin: 10px 0; /* Margem em cima e embaixo */
+}
+
+.lembrete-actions {
+    top:0;
+}
+
+.lembrete-titulo{
+    color:#45A29E;
+    font-size:20px;
+    text-decoration:none;
+}

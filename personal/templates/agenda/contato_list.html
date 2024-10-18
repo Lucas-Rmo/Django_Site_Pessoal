@@ -1,18 +1,29 @@
 {% extends "base.html" %}
-
+{% block title %}Lista de contatos{% endblock title %}
 {% block content %}
+<center>
 <h1>Lista de Contatos</h1>
 
-<a href="{% url 'contato_create' %}">Adicionar Novo Contato</a>
-
-<ul>
+<a href="{% url 'contato_create' %}" class="add-btn">Adicionar Novo Contato</a>
+<br><br><br>
+<table>
+    <tr class="table-titles">
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th></th>
+        <th></th>
+    </tr>
     {% for contato in contatos %}
-    <li>
-        <a href="{% url 'contato_detail' contato.pk %}">{{ contato.nome }}</a> - 
-        {{ contato.email }} 
-        <a href="{% url 'contato_update' contato.pk %}">[Editar]</a>
-        <a href="{% url 'contato_delete' contato.pk %}">[Deletar]</a>
-    </li>
+    <tr>
+        <th><a class="contact-name" href="{% url 'contato_detail' contato.pk %}">{{ contato.nome }}</a></th>
+        <th>{{ contato.email }} </th>
+        <th>{{ contato.telefone}} </th>
+
+        <th><a class="btn-editar" href="{% url 'contato_update' contato.pk %}">Editar</a></th>
+        <th><a class="btn-excluir"href="{% url 'contato_delete' contato.pk %}">Excluir</a></th>
+    </tr>
     {% endfor %}
-</ul>
+</table>
+</center>
 {% endblock content %}

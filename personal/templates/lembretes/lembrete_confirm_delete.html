@@ -1,15 +1,16 @@
 {% extends "base.html" %}
-
+{% block title %}Deletar Lembrete{% endblock title %}Deletar Lembrete
 {% block content %}
+<center>
 <h1>Deletar Lembrete</h1>
 
 <p>Tem certeza de que deseja deletar o lembrete "{{ lembrete.titulo }}"?</p>
 
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Confirmar</button>
+    <button class="btn-confirmar" type="submit">Confirmar</button>
 </form>
 
-<a href="{% url 'lembrete_list' %}">Cancelar</a>
-
+<a class="btn-cancelar" href="{% url 'lembrete_list' %}">Cancelar</a>
+</center>
 {% endblock content %}
