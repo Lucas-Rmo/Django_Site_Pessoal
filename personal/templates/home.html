@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+Seja bem-vindo(a),{{user.firstname}}! <br>
+
+
+{% now "j" %}
+
+de {% now "F" %}
+
+de {% now "Y " %} <br>
+
+<h1>Eventos de hoje:</h1>
+<ul>
+    {% for evento in eventos_dia %}
+        <li>{{ evento.nome }} - {{ evento.inicio }} até {{ evento.fim }} </li>
+    {% empty %}
+        <li>Nenhum evento para hoje</li>
+    {% endfor %}
+
+</ul>
+
+<h1>Eventos da semana:</h1>
+<ul>
+    {% for evento in eventos_semana %}
+        <li>{{ evento.nome }} - {{ evento.dia}} - {{ evento.inicio }} até {{ evento.fim }} </li>
+    {% empty %}
+        <li>Nenhum evento para essa semana</li>
+    {% endfor %}
+
+</ul>
+
+<h1>Eventos do mês:</h1>
+<ul>
+    {% for evento in eventos_mes %}
+        <li>{{ evento.nome }} - {{ evento.dia}} - {{ evento.inicio }} até {{ evento.fim }} </li>
+    {% empty %}
+        <li>Nenhum evento para esse mês</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}

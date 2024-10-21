@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+    {% block title %}Calendário{% endblock title %} 
+
+
+    {% block content %}
+    <center>
+    <a class="add-btn" href="{% url 'lembrete_create' %}">Adicionar Novo Evento</a>
+    </center>
+    <div class="calendar-container">
+        <div class="navigation">
+            <div class="month-navigation">
+                <a class="nav-link" href="{% url 'calendario' ano_anterior mes_anterior %}">&larr; Mês Anterior</a>
+                <h1>Calendário de {{ mes }}/{{ ano }}</h1>
+                <a class="nav-link" href="{% url 'calendario' ano_proximo mes_proximo %}">Próximo Mês &rarr;</a>
+            </div>
+        </div>
+
+        <div class="calendar">
+            <div class="weekday">Seg</div>
+            <div class="weekday">Ter</div>
+            <div class="weekday">Qua</div>
+            <div class="weekday">Qui</div>
+            <div class="weekday">Sex</div>
+            <div class="weekday">Sáb</div>
+            <div class="weekday">Dom</div>
+
+            {% for dia, dia_semana in dias_do_mes %}
+                {% if dia == 0 %}
+                    <!-- Dias vazios (fora do mês) -->
+                    <div class="day empty"></div>
+                {% else %}
+                    <div class="day">
+                        {{ dia }}
+
+                        <!-- Exibe eventos desse dia -->
+                        {% for evento in eventos %}
+                            {% if evento.dia.day == dia %}
+                                <div class="event">
+                                    <a href="#"><strong>{{ evento.nome }}</strong><br>
+                                    {{ evento.inicio }} - {{ evento.fim }}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
